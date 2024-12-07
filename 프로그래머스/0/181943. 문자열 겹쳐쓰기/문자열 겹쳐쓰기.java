@@ -1,13 +1,10 @@
 class Solution {
     public String solution(String my_string, String overwrite_string, int s) {
     
-        char[] myStringArr = my_string.toCharArray();
-        char[] overwriteStringArr = overwrite_string.toCharArray();
+       StringBuilder answer = new StringBuilder(my_string);
         
-        for (int i = 0; i < overwriteStringArr.length; i++) {
-            myStringArr[s + i] = overwriteStringArr[i];
-        }
+       answer.replace(s, s + overwrite_string.length(), overwrite_string);
         
-        return new String(myStringArr);
+       return answer.toString();
     }
 }
