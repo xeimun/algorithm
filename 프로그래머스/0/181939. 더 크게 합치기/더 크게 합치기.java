@@ -3,8 +3,8 @@ class Solution {
         String concatAB = String.valueOf(a) + String.valueOf(b);
         String concatBA = String.valueOf(b) + String.valueOf(a);
         
-        int numAB = Integer.valueOf(concatAB);
-        int numBA = Integer.valueOf(concatBA);
+        int numAB = Integer.parseInt(concatAB);
+        int numBA = Integer.parseInt(concatBA);
         
         return Math.max(numAB, numBA);
     }
