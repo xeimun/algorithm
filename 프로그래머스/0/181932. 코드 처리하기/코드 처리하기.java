@@ -1,31 +1,24 @@
 class Solution {
     public String solution(String code) {
-        char mode = '0';
+        int mode = 0;
         StringBuilder ret = new StringBuilder();
-        char[] codeCharArr = code.toCharArray();
         
-        for(int i = 0; i < codeCharArr.length; i++){
-            if(mode == '0'){
-                if(codeCharArr[i] == '1'){
-                    mode = '1';
-                    continue;
-                } 
-                if(i % 2 == 0){
-                   ret.append(codeCharArr[i]); 
-                }
+        for(int idx = 0; idx < code.length(); idx++){
+            char codeChar = code.charAt(idx);
+            
+            if(codeChar == '1'){
+                mode = mode == 0 ? 1 : 0;
+                continue;
             }
-           if(mode == '1'){
-                if(codeCharArr[i] == '1'){
-                    mode = '0';
-                    continue;
-                } 
-                if(i % 2 != 0){
-                   ret.append(codeCharArr[i]); 
-                }
+            
+            if(idx % 2 == mode){
+                ret.append(codeChar);
             }
+            
         }
+        
         if(ret.toString().isBlank()){
-            return new String("EMPTY");
+            return "EMPTY";
         }
         return ret.toString();
     }
