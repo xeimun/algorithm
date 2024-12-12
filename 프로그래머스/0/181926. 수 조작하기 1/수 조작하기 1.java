@@ -1,9 +1,8 @@
 class Solution {
     public int solution(int n, String control) {
         int answer = n;
-        char[] controls = control.toCharArray();
-        for (int i = 0; i < controls.length; i++) {
-            answer += switch (controls[i]) {
+        for (char c : control.toCharArray()) {
+            answer += switch (c) {
                 case 'w' -> 1;
                 case 's' -> -1;
                 case 'd' -> 10;
