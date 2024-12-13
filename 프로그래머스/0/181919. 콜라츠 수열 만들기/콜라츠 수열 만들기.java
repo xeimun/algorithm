@@ -6,17 +6,13 @@ class Solution {
         answer.add(n);
 
         while (n > 1) {
-            if (n % 2 == 0) {
-                n = n / 2;
-                answer.add(n);
-                continue;
-            }
-            n = 3 * n + 1;
-            answer.add(n);
+            int tmp = n % 2 == 0 ? n / 2 : 3 * n + 1;
+            answer.add(tmp);
+            n = tmp;
         }
 
         return answer.stream()
-                     .mapToInt(Integer::valueOf)
+                     .mapToInt(Integer::intValue)
                      .toArray();
     }
 }
