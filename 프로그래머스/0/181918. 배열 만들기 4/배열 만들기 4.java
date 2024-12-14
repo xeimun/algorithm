@@ -5,12 +5,7 @@ public int[] solution(int[] arr) {
         int i = 0;
 
         while (i < arr.length) {
-            if (stk.isEmpty()) {
-                stk.add(arr[i]);
-                i++;
-                continue;
-            }
-            if (stk.get(stk.size() - 1) < arr[i]) {
+            if (stk.isEmpty() || stk.get(stk.size() - 1) < arr[i]) {
                 stk.add(arr[i]);
                 i++;
                 continue;
@@ -19,7 +14,7 @@ public int[] solution(int[] arr) {
         }
 
         return stk.stream()
-                     .mapToInt(Integer::intValue)
-                     .toArray();
+                  .mapToInt(Integer::intValue)
+                  .toArray();
     }
 }
