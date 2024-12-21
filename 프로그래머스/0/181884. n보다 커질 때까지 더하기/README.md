@@ -1,10 +1,10 @@
 # [level 0] n보다 커질 때까지 더하기 - 181884 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181884) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181884?language=java) 
 
 ### 성능 요약
 
-메모리: 72.9 MB, 시간: 0.02 ms
+메모리: 87.2 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 12월 21일 13:32:01
+2024년 12월 21일 13:33:59
 
 ### 문제 설명
 
