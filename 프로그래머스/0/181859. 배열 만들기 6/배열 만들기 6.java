@@ -1,24 +1,16 @@
 import java.util.*;
 class Solution {
     public int[] solution(int[] arr) {
-        int i = 0;
-        ArrayList<Integer> list = new ArrayList<>();
-        while (i < arr.length) {
-            if (list.isEmpty()) {
-                list.add(arr[i]);
-                i++;
-            } else if (list.get(list.size() - 1) == arr[i]) {
-                list.remove(list.size() - 1);
-                i++;
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (!stack.isEmpty() && stack.peek() == arr[i]) {
+                stack.pop();
             } else {
-                list.add(arr[i]);
-                i++;
+                stack.push(arr[i]);
             }
         }
-        int[] stk = new int[list.size()];
-        for (int j = 0; j < stk.length; j++) {
-            stk[j] = list.get(j);
-        }
-        return stk.length == 0 ? new int[]{-1} : stk;
+        return stack.isEmpty() ? new int[]{-1} : stack.stream()
+                                                      .mapToInt(i -> i)
+                                                      .toArray();
     }
 }
