@@ -1,19 +1,13 @@
 import java.util.*;
 class Solution {
     public int[][] solution(int[][] arr) {
-        int rowCnt = arr.length;
-        int colCnt = arr[0].length;
-        if (rowCnt > colCnt) {
-            for (int i = 0; i < rowCnt; i++) {
-                arr[i] = Arrays.copyOf(arr[i], rowCnt);
-            }
+        int max = Math.max(arr.length, arr[0].length);
+        int[][] answer = new int[max][max];
+
+        for (int i = 0; i < arr.length; i++) {
+            answer[i] = Arrays.copyOf(arr[i], max);
         }
-        if (rowCnt < colCnt) {
-            arr = Arrays.copyOf(arr, colCnt);
-            for (int i = 0; i < colCnt - rowCnt; i++) {
-                arr[rowCnt + i] = new int[colCnt];
-            }
-        }
-        return arr;
+        
+        return answer;
     }
 }
